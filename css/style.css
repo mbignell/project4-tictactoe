@@ -21,6 +21,7 @@ h1 {
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
   display: inline-block;
   padding: 1.25em 3em;
+  color: #333;
   text-decoration: none;
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease; }
@@ -50,6 +51,13 @@ h1 {
       color: #54D17A; }
     .screen-start h1 + .button {
       margin-top: 5em; }
+  .screen-name {
+    background-color: red;
+  }
+  .screen-name-one {
+    background-color: #FFA000; }
+  .screen-name-two {
+    background-color: #3688C3; }
   .screen-win p {
     font-size: 6em;
     font-weight: 700;
@@ -94,7 +102,8 @@ h1 {
   width: 35%;
   padding: 1.25em 0 1em;
   outline: 1px solid #ccc;
-  transition: 1s; }
+  transition: 1s;
+  height: 42px;}
   .players svg g {
     fill: rgba(0, 0, 0, 0.25); }
   .players:first-child {
@@ -104,12 +113,33 @@ h1 {
   .players-turn {
     outline: none;
   }
+  .playername {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ccc;
+    padding-right: 20px;
+    margin-top: -10px;
+    text-align: right;
+    line-height: 61px;
+    font-size: 30px;
+  }
+  .players svg {
+    display: inline-block;
+   vertical-align: middle;
+   margin-top: -15px;
+  }
   #player1.active svg g, #player2.active svg g {
     fill: #fff; }
   #player1.active {
     background: #FFA000; }
   #player2.active {
-    background: #3688C3; }
+    background: #3688C3;}
+  #player1.active .playername,
+  #player2.active .playername {
+    color: white;
+  }
+
 
 .boxes {
   width: 480px;
@@ -143,3 +173,51 @@ h1 {
 
 .box.player2-hover:hover {
   background-image: url(../img/x.svg); }
+
+input {
+  max-width: 430px;
+  width: 95%;
+  font-size: 30px;
+  height: 60px;
+  padding-left: 18px;
+  display: block;
+  margin: 20px auto 40px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0,0,0,0.12);
+  border: 0;
+}
+
+.message-name {
+  color: white;
+  font-size: 40px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.error {
+  width: 450px;
+  margin: 0 auto;
+  background: #feb02f;
+  padding: 11px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 2px solid #e38e00;
+  margin-top: -12px;
+}
+
+.screen-name-two .error {
+  background: #60a5d7;
+  border: 2px solid #1b69a1;
+}
+
+a.completey_text {
+  display:block;
+  text-align: center;
+  color: rgba(0,0,0,0.5);
+  font-size: 12px;
+  margin-top: 20px;
+}
+a.completey_text:hover {
+  color: rgba(0,0,0,0.8);
+}
