@@ -184,11 +184,6 @@ function computerPlay() {
   }
   playBox(gameBoxes[i],i);
   setPlayer(1);
-  // Min-max Variation
-  // Take the current gamebox (boxesInPlay)
-  // for (let i = 0; i < 9; i++) {
-  //
-  // };
 };
 
 // The game ends when one player has three of their symbols in a row either horizontally, vertically or diagonally.
