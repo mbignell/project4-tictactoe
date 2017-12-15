@@ -113,7 +113,6 @@ function addNames() {
     document.getElementsByTagName("input")[0].focus();
   } else {
     player2name = nameInput.value;
-    // choose difficulty here!!!
     newGame();
   }
 }
@@ -139,7 +138,7 @@ function newGame() {
   currentPlayer = randomPlayer;
   setPlayer(randomPlayer);
 
-  // tell the computer to do things
+  // If random player is the computer, computer plays
   if (numberOfPlayers === 1 && currentPlayer === 2) {
     computerPlay();
   };
@@ -148,14 +147,15 @@ function newGame() {
   showScreen.board();
 };
 
-// game play
+// Game play
 function playBox(selectedBox, boxNumber) {
+  // If the box is free to be played
   if (boxesInPlay[boxNumber] === 0) {
+    // add to total (to track if board is full)
     boxesChecked++;
     // Sets box to player's #
     boxesInPlay[boxNumber] = currentPlayer;
-
-    // When the player clicks on an empty square, attach the class box-filled-1 (for O) or box-filled-2 (for X) to the square.
+    // When the player clicks on an empty square, add their mark
     if (currentPlayer === 1) {
       selectedBox.classList.add('box-filled-1');
       checkIfWon();
@@ -163,7 +163,6 @@ function playBox(selectedBox, boxNumber) {
       selectedBox.classList.add('box-filled-2');
       checkIfWon();
     };
-
     // switch active player
     if (numberOfPlayers === 2) {
       if (currentPlayer === 1) {
@@ -175,8 +174,8 @@ function playBox(selectedBox, boxNumber) {
   };
 };
 
+// Random Variation of computer play
 function computerPlay() {
-  // Random Variation of computer play
   let i = Math.floor(Math.random() * 9);
   while (boxesInPlay[i] != 0) {
     console.log('choosing new');
